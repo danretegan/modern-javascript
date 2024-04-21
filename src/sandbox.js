@@ -1,51 +1,19 @@
-//! Objects in Arrays:
+//! Math object:
 
-// const blogs = [
-//   {
-//     title: "why mac & cheese rules",
-//     likes: 30,
-//   },
-//   {
-//     title: "10 things to make with marmite",
-//     likes: 50,
-//   },
-// ];
+console.log(Math);
+console.log(Math.PI);
 
-// console.log(blogs);
+const random = Math.random();
+console.log('random number:', random);
 
-let user = {
-  name: 'Crystal',
-  age: 30,
-  email: 'crystal@thenetninja.co.uk',
-  location: 'Berlin',
-  blogs: [
-    {
-      title: 'why mac & cheese rules',
-      likes: 30,
-    },
-    {
-      title: '10 things to make with marmite',
-      likes: 50,
-    },
-  ],
-  login() {
-    // console.log("the user logged in");
-  },
-  logout() {
-    // console.log("the user logged out");
-  },
-  // logBlogs: () => {
-  logBlogs() {
-    console.log(this);
-    console.log(this.blogs);
-    console.log(`${this.name} has written the following blogs:`);
-    this.blogs.forEach(element => {
-      console.info('-', element.title, '/ likes:', element.likes);
-    });
-  },
-};
+const random10 = random * 10;
+console.log('random number * 10 =', random10);
+console.log('round:', Math.round(random10));
+console.log('floor:', Math.floor(random10));
+console.log('ceil:', Math.ceil(random10));
+console.log('trunc:', Math.trunc(random10));
 
-// user.login();
-// user.logout();
-user.logBlogs();
-// console.log(this);
+console.log(
+  'un numar intreg, aleator, intre 1 si 100:',
+  Math.round(random * 100)
+);
