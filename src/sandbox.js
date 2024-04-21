@@ -1,42 +1,32 @@
-//TODO get element by id:
+//! Adding & Changing Page Content
 
-const title = document.getElementById('page-title');
-console.log(title);
-console.log('=====================');
+const para = document.querySelector('p');
+console.log(para);
+console.log('vechiul text: ', para.innerText);
 
-//TODO get element`s!` by class name (HTMLCollection):
+//! Folosindu-ne de querySelector si de proprietatea innerText am INLOCUIT vechiul text in primul <p>:
+para.innerText = 'am schimbat textul in browser!';
+console.log('noul text:', para.innerText);
+console.log('====================');
 
-const errors = document.getElementsByClassName('error');
-console.log(errors);
-console.log(errors[0]);
-console.log(errors[1]);
-//! Atentie: metoda forEach NU functioneaza pe HTMLCollection!
-console.log('=====================');
+const paras = document.querySelectorAll('p');
 
-//TODO get element`s!` by their tag name (HTMLCollection):
+paras.forEach(element => {
+  console.log(element.innerText);
+  //! Folosindu-ne de querySelectorAll, de proprietatea innerText si de += am ADAUGAT text de data aceasta, in toate <p>:
+  element.innerText += ' new text';
+});
+console.log('====================');
 
-const paragraphs = document.getElementsByTagName('p');
-console.log(paragraphs);
-console.log(paragraphs[0]);
-console.log(paragraphs[1]);
-console.log(paragraphs[2]);
-console.log('=====================');
+//! Inlocuim sau adaugam (+=) cod HTML:
+const content = document.querySelector('.content');
+console.log('vechiul HTML: ', content.innerHTML);
+content.innerHTML = '<h2> THIS IS A NEW h2 TITLE </h2>';
+console.log('noul HTML:', content.innerHTML);
 
-//TODO Rezumat:
-console.log('HTMLCollection methods: .item() .namedItem()');
-console.log(
-  'Node List methods: .item() .entries() .forEach() .keys() .values()'
-);
+//! Adaugam (+=) in div-ul cu clasa content o lista de persoane, fiecare persoana intr-un paragraf:
+const people = ['Dan', 'Radu', 'Ion', 'Vasile'];
 
-/**
-HTMLCollection methods:
-.item()
-.namedItem()
-
-Node List methods:
-.item()
-.entries()
-.forEach()
-.keys()
-.values() 
-*/
+people.forEach(element => {
+  content.innerHTML += `<p>${element}</p>`;
+});
