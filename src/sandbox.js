@@ -1,33 +1,36 @@
-//! 1) primitive values:
-console.log('1) primitive values:');
+//TODO The Query Selector:
 
-let scoreOne = 50;
-let scoreTwo = scoreOne;
-console.log(`scoreOne = ${scoreOne}`, 'and', `scoreTwo = ${scoreTwo}`);
+const paragraph1 = document.querySelector('p');
+const paragraph3 = document.querySelector('.error');
+const div2 = document.querySelector('div.error');
 
-scoreOne = 100;
-console.log(`scoreOne = ${scoreOne}`, 'and', `scoreTwo = ${scoreTwo}`);
-
-console.warn(
-  'Desi am modificat valoare lui scoreOne (scoreOne = 100), SI scoreTwo = scoreOne, totusi scoreTwo ramane = 50'
+//TODO Select element /Inspect /Copy /Copy selector!
+const paragraph2 = document.querySelector(
+  'body > div:nth-child(3) > p:nth-child(2)'
 );
+console.log(paragraph1);
+console.log(paragraph3);
+console.log(div2);
+console.log(paragraph2);
+console.log('=====================');
 
-//! 2) reference values:
-console.log('2) reference values:');
+//TODO Se selecteaza (si se listeaza) toate elementele <p>:
+const paragraphs = document.querySelectorAll('p');
+console.log(paragraphs);
+console.log('=====================');
 
-const userOne = { name: 'Dan', age: 38 };
-const userTwo = userOne;
+//TODO Sau selectam si listam un anumit element <p>:
+console.log(paragraphs[0]);
+console.log(paragraphs[1]);
+console.log(paragraphs[2]);
+console.log('=====================');
 
-console.log('userOne:', userOne, 'userTwo:', userTwo);
+//TODO Putem folosi metoda forEach:
+paragraphs.forEach(element => {
+  console.log(element);
+});
 
-userTwo.age = 35;
-console.log('userOne:', userOne, 'userTwo:', userTwo);
-
-console.warn(
-  'Acum, daca modificam o valorea dintr-un obiect (userTwo.age = 35), modificarea se va vedea si in celalalt obiect.'
-);
-
-//!Concluzie:
-console.log(
-  'Valorile primitive sunt stocate direct în stivă (stack), fiecare având propria lor copie independentă, deci modificarea unei valori NU afecteaza cealalta copie. Pe de altă parte, valorile de referință, cum ar fi obiectele, sunt stocate în zona de memorie numita heap, iar variabilele conțin doar referințe către acele obiecte. Când se modifică un obiect prin una dintre referințe, modificarea este vizibilă și pentru celelalte referințe către acel obiect, deoarece toate aceste referințe indică aceeași locație în memorie.'
-);
+//TODO Selectam toate clasele .error:
+const errors = document.querySelectorAll('.error');
+console.log('=====================');
+console.log(errors);
