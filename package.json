@@ -2,20 +2,20 @@
   "name": "modern-javascript",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://danretegan.github.io/parcel-project-template",
+  "homepage": "https://danretegan.github.io/modern-javascript",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /modern-javascript/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danretegan/parcel-project-template.git"
+    "url": "git+https://github.com/danretegan/modern-javascript.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <danretegan@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danretegan/parcel-project-template/issues"
+    "url": "https://github.com/danretegan/modern-javascript/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
