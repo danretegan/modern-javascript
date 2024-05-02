@@ -1,17 +1,11 @@
-const link = document.querySelector('a');
+const title = document.querySelector('h1');
 
-console.log(link.getAttribute('href'));
+// title.setAttribute('style', 'margin: 50px');
+console.log(title.style);
+console.log(title.style.color);
 
-link.setAttribute('href', 'https://www.youtube.com');
-link.innerText = 'change to YouTube!';
-
-console.log(link.getAttribute('href'));
-
-console.log('=======================');
-
-const mssg = document.querySelector('p');
-
-console.log(mssg.getAttribute('class'));
-mssg.setAttribute('class', 'success');
-console.log(mssg.getAttribute('class'));
-mssg.setAttribute('style', 'color: green;');
+title.style.margin = '50px';
+title.style.color = 'green';
+title.style.fontSize = '16px';
+// Delete a property:
+title.style.margin = '';
