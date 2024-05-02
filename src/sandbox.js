@@ -1,33 +1,19 @@
-const article = document.querySelector('article');
+const button = document.querySelector('button');
 
-//! children:
-console.log(article);
-console.log(article.children);
-// Avem HTMLCollection, dar in HTMLCollection nu putem folosi metoda forEach.
-
-// Folosim Array.from(article.children) si transformam HTMLCollection intr-un array. Acum putem folosi forEeach!
-console.log(Array.from(article.children));
-
-//! Acum putem folosi metoda forEach:
-Array.from(article.children).forEach(elementCopil => {
-  elementCopil.classList.add('new-class');
-  console.log('children:', elementCopil);
+button.addEventListener('click', () => {
+  console.log('s-a dat click pe buton!');
 });
 
-console.log('===============');
+// ===========================================
 
-//! parentElement:
-const title = document.querySelector('h2');
-console.log('parent Element:', title.parentElement);
-console.log('parent parent Element:', title.parentElement.parentElement);
+const items = document.querySelectorAll('li');
 
-console.log('===============');
-
-//! nextElementSibling:
-console.log('next Element Sibling:', title.nextElementSibling);
-console.log('previous Element Sibling:', title.previousElementSibling);
-
-console.log('===============');
-
-//! chaining:
-console.log('chaining:', title.nextElementSibling.parentElement.children);
+items.forEach(element => {
+  element.addEventListener('click', event => {
+    // console.log('item clicked');
+    // console.log(event);
+    console.log(event.target);
+    // console.log(element);
+    event.target.style.textDecoration = 'line-through';
+  });
+});
