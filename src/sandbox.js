@@ -1,36 +1,33 @@
-// const content = document.querySelector('p');
-// console.log('1', content.classList);
+const article = document.querySelector('article');
 
-// content.classList.add('error');
-// console.log('2', content.classList);
+//! children:
+console.log(article);
+console.log(article.children);
+// Avem HTMLCollection, dar in HTMLCollection nu putem folosi metoda forEach.
 
-// content.classList.remove('error');
-// console.log('3', content.classList);
+// Folosim Array.from(article.children) si transformam HTMLCollection intr-un array. Acum putem folosi forEeach!
+console.log(Array.from(article.children));
 
-// content.classList.add('success');
-// console.log('4', content.classList);
-
-const paras = document.querySelectorAll('p');
-
-paras.forEach(element => {
-  console.log(element.textContent);
-  if (element.textContent.includes('error')) {
-    element.classList.add('error');
-  }
-
-  if (element.textContent.includes('success')) {
-    element.classList.add('success');
-  }
+//! Acum putem folosi metoda forEach:
+Array.from(article.children).forEach(elementCopil => {
+  elementCopil.classList.add('new-class');
+  console.log('children:', elementCopil);
 });
 
-console.log('===================');
+console.log('===============');
 
-Array.from(paras).forEach(element => {
-  console.log('clasa adaugata:', element.classList.toString());
-});
+//! parentElement:
+const title = document.querySelector('h2');
+console.log('parent Element:', title.parentElement);
+console.log('parent parent Element:', title.parentElement.parentElement);
 
-const title = document.querySelector('.title');
-title.classList.toggle('test');
-title.classList.toggle('test');
+console.log('===============');
 
-//TODO classList.toggle() verifică dacă clasa specificată este deja aplicată elementului. Dacă este, o elimină; dacă nu este, o adaugă. Această metodă este utilă pentru a schimba starea vizuală a unui element în răspuns la anumite evenimente sau condiții, fără a fi nevoie să urmărim manual dacă clasa a fost deja aplicată sau nu.
+//! nextElementSibling:
+console.log('next Element Sibling:', title.nextElementSibling);
+console.log('previous Element Sibling:', title.previousElementSibling);
+
+console.log('===============');
+
+//! chaining:
+console.log('chaining:', title.nextElementSibling.parentElement.children);
