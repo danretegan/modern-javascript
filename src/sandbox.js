@@ -1,20 +1,28 @@
 const ul = document.querySelector('ul');
-// ul.remove();
-
 const button = document.querySelector('button');
+
 button.addEventListener('click', () => {
-  // ul.innerHTML += '<li>something new</li>';
   const li = document.createElement('li');
-  li.textContent = 'something to do';
-  // ul.append(li);
+  li.textContent = 'something to do!';
   ul.prepend(li);
 });
 
-const items = document.querySelectorAll('li');
+// const items = document.querySelectorAll('li');
 
-items.forEach(element => {
-  element.addEventListener('click', event => {
-    // event.target.style.textDecoration = 'line-through';
-    event.target.remove();
-  });
+// items.forEach(element => {
+//   element.addEventListener('click', event => {
+//     console.log('event in LI!');
+//     event.stopPropagation();
+//     event.target.remove();
+//   });
+// });
+
+ul.addEventListener('click', e => {
+  console.log('event in UL!');
+  console.log(e.target);
+  console.log(e);
+  // target:li, tagName: "LI"
+  if (e.target.tagName === 'LI') {
+    e.target.remove();
+  }
 });
