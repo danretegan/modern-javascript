@@ -1,0 +1,2 @@
+var form=document.querySelector(".signup-form");form.addEventListener("submit",(function(e){e.preventDefault(),console.log(form.username.value)}));var username="shaunp",pattern=/^[a-z]{6,}$/,result=pattern.test(username);result?console.log("Metoda 1 test: RegEx test pased! :)"):console.log("Metoda 1 test: RegEx test failed! :(");var result2=username.search(pattern);console.log("Metoda 2 search:",result2);
+//# sourceMappingURL=index.3e71acad.js.map
