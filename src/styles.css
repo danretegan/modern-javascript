@@ -12,3 +12,11 @@ input {
   margin: 10px auto;
   padding: 4px;
 }
+
+.success {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color: lightpink;
+}
