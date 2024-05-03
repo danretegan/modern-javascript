@@ -1,28 +1,16 @@
-const ul = document.querySelector('ul');
-const button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-  const li = document.createElement('li');
-  li.textContent = 'something to do!';
-  ul.prepend(li);
+const copy = document.querySelector('.copy-me');
+copy.addEventListener('copy', () => {
+  console.log('© The document is under copyright!');
 });
 
-// const items = document.querySelectorAll('li');
+const box = document.querySelector('.box');
+box.addEventListener('mousemove', event => {
+  // console.log('mouse move!');
+  // console.log(event);
+  // console.log(event.offsetX, event.offsetY);
+  box.textContent = `X pos: ${event.offsetX}, Y pos: ${event.offsetY}`;
+});
 
-// items.forEach(element => {
-//   element.addEventListener('click', event => {
-//     console.log('event in LI!');
-//     event.stopPropagation();
-//     event.target.remove();
-//   });
-// });
-
-ul.addEventListener('click', e => {
-  console.log('event in UL!');
-  console.log(e.target);
-  console.log(e);
-  // target:li, tagName: "LI"
-  if (e.target.tagName === 'LI') {
-    e.target.remove();
-  }
+document.addEventListener('wheel', evt => {
+  console.log(evt.pageX, evt.pageY);
 });
