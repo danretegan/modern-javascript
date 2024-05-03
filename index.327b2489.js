@@ -1,0 +1,2 @@
+var ul=document.querySelector("ul"),button=document.querySelector("button");button.addEventListener("click",(function(){var e=document.createElement("li");e.textContent="something to do!",ul.prepend(e)})),ul.addEventListener("click",(function(e){console.log("event in UL!"),console.log(e.target),console.log(e),"LI"===e.target.tagName&&e.target.remove()}));
+//# sourceMappingURL=index.327b2489.js.map
