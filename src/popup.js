@@ -12,7 +12,7 @@ close.addEventListener('click', () => {
 
 popup.addEventListener('click', e => {
   // Ne asiguram ca popup-ul se inchide DOAR daca se face click pe wrapper si nu pe popup:
-  console.log(e.target);
+  console.log(e);
   if (e.target.className === 'popup-wrapper') {
     popup.style.display = 'none';
   }
