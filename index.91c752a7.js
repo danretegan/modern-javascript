@@ -1,0 +1,2 @@
+var button=document.querySelector("button"),popup=document.querySelector(".popup-wrapper"),close=document.querySelector(".popup-close");button.addEventListener("click",(function(){popup.style.display="block"})),close.addEventListener("click",(function(){popup.style.display="none"})),popup.addEventListener("click",(function(e){console.log(e),"popup-wrapper"===e.target.className&&(popup.style.display="none")}));
+//# sourceMappingURL=index.91c752a7.js.map
