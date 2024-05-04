@@ -13,4 +13,4 @@ console.warn(
 
 // example 2 - sort strings:
 names.sort();
-console.log(names);
+console.log('Sortam array-ul "names.sort();":', names);
