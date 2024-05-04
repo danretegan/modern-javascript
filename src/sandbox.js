@@ -1,8 +1,12 @@
-//! Find Method:
-const scores = [10, 5, 0, 40, 60, 10, 20, 70];
+//! Sort Method:
 
-const firstHighScore = scores.find(element => {
-  return element > 50;
-});
+// example 1 - reverse strings:
+const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
+console.log('array-ul original, "names":', names);
 
-console.log(`Primul scor mai mare decat 50 este: ${firstHighScore}`);
+const reverseArray = names.reverse();
+console.log('.reverse() inverseaza ordinea in array:', reverseArray);
+console.log('listam din nou array-ul "names":', names);
+console.warn(
+  'Dupa cum se vede mai sus, array-ul original a fost modificat! Deci nu are rost folosirea unei noi constante.'
+);
