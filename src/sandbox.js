@@ -25,3 +25,17 @@ console.log('sortare crescatoare:', scores); // Afiseaza: [5, 10, 20, 35, 45, 50
 0;
 scores.sort((a, b) => b - a);
 console.log('sortare descrescatoare:', scores); // Afiseaza: [70, 50, 45, 35, 20, 10, 5]
+
+console.log('=================================');
+
+//TODO example 3 - sorting objects:
+const players = [
+  { name: 'mario', score: 20 },
+  { name: 'luigi', score: 10 },
+  { name: 'chun-li', score: 50 },
+  { name: 'yoshi', score: 30 },
+  { name: 'shaun', score: 70 },
+];
+
+players.sort((a, b) => a.score - b.score);
+console.log('sortare crescatoare:', players);
