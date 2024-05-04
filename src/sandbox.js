@@ -1,18 +1,26 @@
-const scores = [10, 30, 15, 25, 50, 40, 5];
+// Map Method:
+const prices = [20, 10, 30, 25, 15, 40, 80, 5];
 
-const arrayFiltrat = scores.filter(elem => {
-  return elem > 25;
-});
+const salePrices = prices.map(pret => pret / 2);
+console.log('salePrices (50% off):', salePrices);
 
-console.log('arrayFiltrat:', arrayFiltrat);
+console.log('===============================');
 
-const users = [
-  { name: 'shaun', premium: true },
-  { name: 'yoshi', premium: false },
-  { name: 'mario', premium: false },
-  { name: 'chun-li', premium: true },
+const products = [
+  { name: 'gold star', price: 20 },
+  { name: 'mushroom', price: 40 },
+  { name: 'green shells', price: 30 },
+  { name: 'banana skin', price: 10 },
+  { name: 'red shells', price: 50 },
 ];
 
-const premiumUsers = users.filter(element => element.premium);
+const saleProducts = products.map(element => {
+  if (element.price > 30) {
+    //TODO refacem elementul obiect cu pretul redus (nu modificam originalul!):
+    return { name: element.name, price: element.price / 2 };
+  }
+  //TODO returnam elementul obiect nemodificat:
+  return element;
+});
 
-console.log('premiumUsers:', premiumUsers);
+console.log('some products on sale:', saleProducts);
