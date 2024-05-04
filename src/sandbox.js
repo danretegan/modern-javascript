@@ -10,3 +10,7 @@ console.log('listam din nou array-ul "names":', names);
 console.warn(
   'Dupa cum se vede mai sus, array-ul original a fost modificat! Deci nu are rost folosirea unei noi constante.'
 );
+
+// example 2 - sort strings:
+names.sort();
+console.log(names);
