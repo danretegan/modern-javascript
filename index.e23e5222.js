@@ -1,0 +1,2 @@
+var prices=[20,10,30,25,15,40,80,5],salePrices=prices.map((function(e){return e/2}));console.log("salePrices (50% off):",salePrices),console.log("===============================");var products=[{name:"gold star",price:20},{name:"mushroom",price:40},{name:"green shells",price:30},{name:"banana skin",price:10},{name:"red shells",price:50}],saleProducts=products.map((function(e){return e.price>30?{name:e.name,price:e.price/2}:e}));console.log("some products on sale:",saleProducts);
+//# sourceMappingURL=index.e23e5222.js.map
