@@ -1,4 +1,4 @@
-const getTodos = callback => {
+const getTodos = (resource, callback) => {
   const request = new XMLHttpRequest();
 
   request.addEventListener('readystatechange', () => {
@@ -10,16 +10,21 @@ const getTodos = callback => {
     }
   });
 
-  request.open('GET', './todos.json');
+  request.open('GET', resource);
   request.send();
 };
 
-getTodos((err, data) => {
-  console.warn('callback fired!');
+//TODO Apelam getTodos spre resursa dorita:
+getTodos('./todos/luigi.json', (err, data) => {
+  console.log('./todos/luigi.json:', data);
 
-  if (err) {
-    console.log('error:', err);
-  } else {
-    console.log('data:', data);
-  }
+  //TODO Apelam din nou getTodos spre alta resursa:
+  getTodos('./todos/mario.json', (err, data) => {
+    console.log('./todos/mario.json:', data);
+
+    //TODO Apelam din nou getTodos spre alta resursa:
+    getTodos('./todos/shaun.json', (err, data) => {
+      console.log('./todos/shaun.json:', data);
+    });
+  });
 });
