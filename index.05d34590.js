@@ -1,2 +1,0 @@
-var request=new XMLHttpRequest;request.addEventListener("readystatechange",(function(){console.log("request:",request),console.warn("request.readyState:",request.readyState),4===request.readyState&&console.log("if (request.readyState = 4) {request.responseText}:",request.responseText)})),request.open("GET","https://jsonplaceholder.typicode.com/todos/"),request.send();
-//# sourceMappingURL=index.05d34590.js.map
