@@ -1,0 +1,2 @@
+var getTodos=function(o,t){var s=new XMLHttpRequest;s.addEventListener("readystatechange",(function(){if(4===s.readyState&&200===s.status){var o=JSON.parse(s.responseText);t(void 0,o)}else 4===s.readyState&&t("Could not fetch data!",void 0)})),s.open("GET",o),s.send()};getTodos("./todos/luigi.json",(function(o,t){console.log("./todos/luigi.json:",t),getTodos("./todos/mario.json",(function(o,t){console.log("./todos/mario.json:",t),getTodos("./todos/shaun.json",(function(o,t){console.log("./todos/shaun.json:",t)}))}))}));
+//# sourceMappingURL=index.f6f1560d.js.map
