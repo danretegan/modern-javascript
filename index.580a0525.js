@@ -1,0 +1,2 @@
+var now=new Date;console.log(dateFns.isToday(now)),console.log(dateFns.isToday(545454)),console.log(dateFns.format(now,"yyyy")),console.log(dateFns.format(now,"MMMM")),console.log(dateFns.format(now,"eeee")),console.log(dateFns.format(now,"do")),console.log(dateFns.format(now,"eeee, MMMM do yyyy"));var before=new Date("February 1 2019 12:00:00"),distance=dateFns.formatDistance(now,before);console.log("the text was written ".concat(distance," ago"));
+//# sourceMappingURL=index.580a0525.js.map
