@@ -1,31 +1,21 @@
-//! timestamps:
-// returnează timpul în milisecunde de la 1 ianuarie 1970
-
-const before = new Date('February 1 2019 7:30:59');
 const now = new Date();
 
-console.log(now);
-console.log(before);
-console.log(now.getTime(), before.getTime());
+console.log(dateFns.isToday(now));
+console.log(dateFns.isToday(545454));
 
-const diff = now.getTime() - before.getTime();
-console.log('diff=', diff);
+//TODO formating options:
 
-const mins = Math.round(diff / 1000 / 60);
-const hours = Math.round(diff / 1000 / 60 / 60);
-const days = Math.round(diff / 1000 / 60 / 60 / 24);
-const weeks = Math.round(diff / 1000 / 60 / 60 / 24 / 7);
-const month = Math.round(diff / 1000 / 60 / 60 / 24 / 30);
-const years = Math.round(diff / 1000 / 60 / 60 / 24 / 365);
+console.log(dateFns.format(now, 'yyyy'));
+console.log(dateFns.format(now, 'MMMM'));
+console.log(dateFns.format(now, 'eeee'));
+console.log(dateFns.format(now, 'do'));
 
-console.log('minute:', mins);
-console.log('ore:', hours);
-console.log('zile:', days);
-console.log('saptamani:', weeks);
-console.log('luni:', month);
-console.log('ani:', years);
+console.log(dateFns.format(now, 'eeee, MMMM do yyyy'));
 
-//! converting timestamps into date objects:
-const timestamp = 1675938474990;
-const data = new Date(1675938474990);
-console.log(data);
+//TODO comparing dates:
+
+const before = new Date('February 1 2019 12:00:00');
+
+const distance = dateFns.formatDistance(now, before);
+
+console.log(`the text was written ${distance} ago`);
