@@ -1,2 +1,0 @@
-var getTodos=function(e){var o=new XMLHttpRequest;o.addEventListener("readystatechange",(function(){if(4===o.readyState&&200===o.status){var t=JSON.parse(o.responseText);e(void 0,t)}else 4===o.readyState&&e("Could not fetch data!",void 0)})),o.open("GET","todos.json"),o.send()};getTodos((function(e,o){console.warn("callback fired!"),e?console.log("error:",e):console.log("data:",o)}));
-//# sourceMappingURL=index.1dc38df1.js.map
