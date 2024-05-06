@@ -1,27 +1,31 @@
-//! dates & times:
-
-const now = new Date();
-console.log(now);
-console.warn('Date() este un', typeof now);
-
-//! year, month, day, times:
-
-console.log('getFullYear:', now.getFullYear());
-// returnează luna (0-11, unde 0 este ianuarie):
-console.warn('Atentie! getMonth:', now.getMonth());
-console.log('getDate:', now.getDate());
-// returnează ziua săptămânii (0-6, unde 0 este duminică):
-console.warn('Atentie: in ce zi din saptamana suntem / getDay:', now.getDay());
-
-console.log('getHours:', now.getHours());
-console.log('getMinutes:', now.getMinutes());
-console.log('getSeconds', now.getSeconds());
-
 //! timestamps:
 // returnează timpul în milisecunde de la 1 ianuarie 1970
-console.log('timestamps in ms from 01.ian.1970 / getTime:', now.getTime());
 
-//! date strings:
-console.log('toDateString:', now.toDateString());
-console.log('toTimeString:', now.toTimeString());
-console.log('toLocaleString:', now.toLocaleString());
+const before = new Date('February 1 2019 7:30:59');
+const now = new Date();
+
+console.log(now);
+console.log(before);
+console.log(now.getTime(), before.getTime());
+
+const diff = now.getTime() - before.getTime();
+console.log('diff=', diff);
+
+const mins = Math.round(diff / 1000 / 60);
+const hours = Math.round(diff / 1000 / 60 / 60);
+const days = Math.round(diff / 1000 / 60 / 60 / 24);
+const weeks = Math.round(diff / 1000 / 60 / 60 / 24 / 7);
+const month = Math.round(diff / 1000 / 60 / 60 / 24 / 30);
+const years = Math.round(diff / 1000 / 60 / 60 / 24 / 365);
+
+console.log('minute:', mins);
+console.log('ore:', hours);
+console.log('zile:', days);
+console.log('saptamani:', weeks);
+console.log('luni:', month);
+console.log('ani:', years);
+
+//! converting timestamps into date objects:
+const timestamp = 1675938474990;
+const data = new Date(1675938474990);
+console.log(data);
