@@ -1,2 +1,0 @@
-var request=new XMLHttpRequest;request.addEventListener("readystatechange",(function(){4===request.readyState&&200===request.status?(console.info("request:",request),console.log("request.responseText:",request.responseText)):4===request.readyState&&console.error("Could not fetch the data!")})),request.open("GET","https://jsonplaceholder.typicode.com/todos/"),request.send();
-//# sourceMappingURL=index.a3ee9a9d.js.map
