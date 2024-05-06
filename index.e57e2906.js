@@ -1,0 +1,2 @@
+var getTodos=function(e){var o=new XMLHttpRequest;o.addEventListener("readystatechange",(function(){if(4===o.readyState&&200===o.status){var t=JSON.parse(o.responseText);console.log(o.responseText),console.log(t),e(void 0,t)}else 4===o.readyState&&e("Could not fetch data!",void 0)})),o.open("GET","https://jsonplaceholder.typicode.com/todos/"),o.send()};getTodos((function(e,o){console.warn("callback fired!"),e?console.log("error:",e):console.log("data:",o)}));
+//# sourceMappingURL=index.e57e2906.js.map
