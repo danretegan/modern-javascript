@@ -1,20 +1,27 @@
-const products = [
-  { name: 'gold star', price: 30 },
-  { name: 'green shell', price: 10 },
-  { name: 'red shell', price: 40 },
-  { name: 'banana skin', price: 5 },
-  { name: 'mushroom', price: 50 },
-];
+//! dates & times:
 
-// const filteredProducts = products.filter(element => element.price > 20);
-// console.log(filteredProducts);
+const now = new Date();
+console.log(now);
+console.warn('Date() este un', typeof now);
 
-// const promos = filteredProducts.map(element => {
-//   return `PROMO: the ${element.name} is ${element.price / 2} $`;
-// });
+//! year, month, day, times:
 
-const promos = products
-  .filter(element => element.price > 20)
-  .map(element => `PROMO: the ${element.name} is ${element.price / 2} $`);
+console.log('getFullYear:', now.getFullYear());
+// returnează luna (0-11, unde 0 este ianuarie):
+console.warn('Atentie! getMonth:', now.getMonth());
+console.log('getDate:', now.getDate());
+// returnează ziua săptămânii (0-6, unde 0 este duminică):
+console.warn('Atentie: in ce zi din saptamana suntem / getDay:', now.getDay());
 
-console.log(promos);
+console.log('getHours:', now.getHours());
+console.log('getMinutes:', now.getMinutes());
+console.log('getSeconds', now.getSeconds());
+
+//! timestamps:
+// returnează timpul în milisecunde de la 1 ianuarie 1970
+console.log('timestamps in ms from 01.ian.1970 / getTime:', now.getTime());
+
+//! date strings:
+console.log('toDateString:', now.toDateString());
+console.log('toTimeString:', now.toTimeString());
+console.log('toLocaleString:', now.toLocaleString());
