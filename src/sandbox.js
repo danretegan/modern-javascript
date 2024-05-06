@@ -3,7 +3,10 @@ const getTodos = callback => {
 
   request.addEventListener('readystatechange', () => {
     if (request.readyState === 4 && request.status === 200) {
-      callback(undefined, request.responseText);
+      const data = JSON.parse(request.responseText);
+      console.log(request.responseText);
+      console.log(data);
+      callback(undefined, data);
     } else if (request.readyState === 4) {
       callback('Could not fetch data!', undefined);
     }
@@ -12,11 +15,6 @@ const getTodos = callback => {
   request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
   request.send();
 };
-
-//! Exemplificare cod asincron:
-console.warn('Exemplificare cod asincron:');
-console.log(1);
-console.log(2);
 
 getTodos((err, data) => {
   console.warn('callback fired!');
@@ -27,6 +25,3 @@ getTodos((err, data) => {
     console.log('data:', data);
   }
 });
-
-console.log(3);
-console.log(4);
