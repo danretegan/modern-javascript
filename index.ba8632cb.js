@@ -1,2 +1,0 @@
-var getTodos=function(e,t){return new Promise((function(t,o){var n=new XMLHttpRequest;n.addEventListener("readystatechange",(function(){if(4===n.readyState&&200===n.status){var e=JSON.parse(n.responseText);t(e)}else 4===n.readyState&&o("Error getting resource!")})),n.open("GET",e),n.send()}))};getTodos("./todos/luigi.json").then((function(e){console.log("promise resolved:",e)})).catch((function(e){console.log("promise rejected:",e)}));
-//# sourceMappingURL=index.ba8632cb.js.map
