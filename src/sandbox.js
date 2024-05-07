@@ -1,7 +1,7 @@
 //! Throwing & Catching Errors:
 
 const getTodos = async () => {
-  const response = await fetch('./todos/luigix.json');
+  const response = await fetch('./todos/luigi.json');
 
   if (response.status !== 200) {
     throw new Error('Nu am putut obtine datele!');
