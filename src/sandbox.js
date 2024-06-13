@@ -1,13 +1,31 @@
-const todos = [
-  { text: 'play mariokart', author: 'shaun' },
-  { text: 'buy some milk', author: 'mario' },
-  { text: 'buy some bread', author: 'luigi' },
-];
+const userOne = {
+  username: 'Dan',
+  email: 'danretegan@yahoo.com',
+  login() {
+    console.log('The user logged in.');
+  },
+  logout() {
+    console.log('The user logged out.');
+  },
+};
 
-// console.log(JSON.stringify(todos));
+console.log('username:', userOne.username, '/', 'email:', userOne.email);
+userOne.login();
+userOne.logout();
 
-localStorage.setItem('todos', JSON.stringify(todos));
+const userTwo = {
+  username: 'Ion',
+  email: 'ionretegan@yahoo.com',
+  login() {
+    console.log('The user logged in.');
+  },
+  logout() {
+    console.log('The user logged out.');
+  },
+};
 
-const stored = localStorage.getItem('todos');
+console.log('username:', userTwo.username, '/', 'email:', userTwo.email);
+userTwo.login();
+userTwo.logout();
 
-console.log(JSON.parse(stored));
+const userThree = new User('test@test@yahoo.com', 'test');
