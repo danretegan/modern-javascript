@@ -1,31 +1,18 @@
-const userOne = {
-  username: 'Dan',
-  email: 'danretegan@yahoo.com',
-  login() {
-    console.log('The user logged in.');
-  },
-  logout() {
-    console.log('The user logged out.');
-  },
-};
+class User {
+  constructor(username, ceva) {
+    //! set up properties of the object:
+    this.username = username;
+    this.ceva = ceva;
+  }
+}
 
-console.log('username:', userOne.username, '/', 'email:', userOne.email);
-userOne.login();
-userOne.logout();
+const userOne = new User('Dan', 'ceva');
+const userTwo = new User('Ion', 'ceva');
 
-const userTwo = {
-  username: 'Ion',
-  email: 'ionretegan@yahoo.com',
-  login() {
-    console.log('The user logged in.');
-  },
-  logout() {
-    console.log('The user logged out.');
-  },
-};
+console.log(userOne);
+console.log(userTwo);
 
-console.log('username:', userTwo.username, '/', 'email:', userTwo.email);
-userTwo.login();
-userTwo.logout();
-
-const userThree = new User('test@test@yahoo.com', 'test');
+//* the "new" keyword:
+//* 1. - it creates a new empty object {};
+//* 2. - it binds the value of "this" to the empy object;
+//* 3. - it calls the constructor function to "build" the object.
