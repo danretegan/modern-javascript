@@ -1,15 +1,21 @@
-//! Throwing & Catching Errors:
+//! store data in localStorage:
+localStorage.setItem('name', 'Mario');
+localStorage.setItem('age', 50);
 
-const getTodos = async () => {
-  const response = await fetch('./todos/luigi.json');
+//! get data from localStorage:
+let nume = localStorage.getItem('name');
+let varsta = localStorage.getItem('age');
 
-  if (response.status !== 200) {
-    throw new Error('Nu am putut obtine datele!');
-  }
-  const data = await response.json();
-  return data;
-};
+console.log(nume, varsta);
 
-getTodos()
-  .then(data => console.log('resolved:', data))
-  .catch(err => console.log('rejected:', err.message));
+//! updating data from localStorage:
+//* varianta 1:
+localStorage.setItem('name', 'Luigi');
+
+//* varianta 2 (dot notation):
+localStorage.age = 40;
+
+nume = localStorage.getItem('name');
+varsta = localStorage.getItem('age');
+
+console.log(nume, varsta);
