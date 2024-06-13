@@ -8,12 +8,9 @@ let varsta = localStorage.getItem('age');
 
 console.log(nume, varsta);
 
-//! updating data from localStorage:
-//* varianta 1:
-localStorage.setItem('name', 'Luigi');
-
-//* varianta 2 (dot notation):
-localStorage.age = 40;
+//! deleting data from local storage:
+// localStorage.removeItem('name');
+localStorage.clear();
 
 nume = localStorage.getItem('name');
 varsta = localStorage.getItem('age');
