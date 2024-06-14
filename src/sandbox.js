@@ -19,8 +19,11 @@ class User {
   }
 }
 
-//* cream o noua clasa, "Admin", care adauga proprietati noi (extends /extinde) la proprietatile clasei "User" (inheritance /moşteneşte):
 class Admin extends User {
+  constructor(username, email, title) {
+    super(username, email);
+    this.title = title;
+  }
   deleteUser(user) {
     users = users.filter(elem => {
       return elem.username !== user.username;
@@ -30,12 +33,6 @@ class Admin extends User {
 
 const userOne = new User('danretegan', 'danretegan@yahoo.com');
 const userTwo = new User('ion', 'ion@ion.com');
-const userThree = new Admin('admin', 'admin@admin.com');
+const userThree = new Admin('admin', 'admin@admin.com', 'black-belt-ninja');
 
-console.log(userOne, userTwo, userThree);
-
-let users = [userOne, userTwo, userThree];
-console.log(users);
-
-userThree.deleteUser(userTwo);
-console.log(users);
+console.log(userThree);
