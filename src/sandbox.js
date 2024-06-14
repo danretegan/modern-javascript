@@ -1,38 +1,27 @@
-class User {
-  constructor(username, email) {
-    this.username = username;
-    this.email = email;
-    this.score = 0;
-  }
-  login() {
-    console.log(`${this.username} just logged in.`);
-    return this;
-  }
-  logout() {
-    console.log(`${this.username} logged out.`);
-    return this;
-  }
-  incScore() {
-    this.score += 1;
-    console.log(`${this.username} has a score of ${this.score}`);
-    return this;
-  }
+//! constructor functions:
+
+function User(username, email) {
+  this.username = username;
+  this.email = email;
+  this.login = function () {
+    console.log(`${this.username} has logged in.`);
+  };
 }
 
-class Admin extends User {
-  constructor(username, email, title) {
-    super(username, email);
-    this.title = title;
-  }
-  deleteUser(user) {
-    users = users.filter(elem => {
-      return elem.username !== user.username;
-    });
-  }
-}
+// class User {
+//   constructor(username, email) {
+//     this.username = username;
+//     this.email = email;
+//   }
+// }
 
 const userOne = new User('danretegan', 'danretegan@yahoo.com');
 const userTwo = new User('ion', 'ion@ion.com');
-const userThree = new Admin('admin', 'admin@admin.com', 'black-belt-ninja');
 
-console.log(userThree);
+console.log(userOne, userTwo);
+userOne.login();
+
+// the 'new' keyword
+// 1 - it creates a new empty object {}
+// 2 - it binds the value of 'this' to the new empty object
+// 3 - it calls the constructor function to 'build' the object
