@@ -1,36 +1,34 @@
-//! Constructorul User:
-function User(username, email) {
-  this.username = username;
-  this.email = email;
-}
+//! rest parameter:
+console.log('rest parameter:');
 
-//! Definim metoda login pe prototipul User:
-User.prototype.login = function () {
-  console.log(`${this.username} has logged in.`);
-  return this;
+const double = (...nums) => {
+  console.log(nums);
+  //* do something
+  return nums.map(num => num * 2);
 };
 
-//! Constructorul Admin:
-function Admin(username, email, title) {
-  User.call(this, username, email); //* Apelăm constructorul User cu contextul this din Admin pentru a moșteni și seta proprietățile username și email.
+const result = double(1, 2, 3, 4, 5, 9, 8, 7, 5, 6);
+console.log(result);
 
-  this.title = title; //*Adaugam proprietati noi numai pe Admin.
-}
+console.log('=================================');
 
-//* 1. Setăm prototipul Admin să fie un obiect creat din prototipul User pentru a moșteni metodele User:
-Admin.prototype = Object.create(User.prototype);
+//! spread syntax (arrays):
+console.log('spread syntax (arrays):');
 
-//* 2. Adaugam metode noi pe prototipul Admin:
-Admin.prototype.deleteUser = function () {
-  // TODO delete a user.
-};
+const people = ['shaun', 'ryu', 'crystal'];
+console.log(people);
+console.log(...people);
 
-const userOne = new User('danretegan', 'danretegan@yahoo.com');
-const userTwo = new User('ion', 'ion@ion.com');
-const userThree = new Admin('admin', 'admin@admin.com', 'black-belt-ninja');
+const members = ['mario', 'chun', ...people];
+console.log(members);
 
-console.log(userOne, userTwo, userThree);
-userOne.login();
+console.log('=================================');
 
-//* Vezi in consola unde este functia deleteUser si mostenirile din User via Object:
-console.log(Admin.prototype);
+//! spread syntax (objects):
+console.log('spread syntax (objects):');
+
+const person = { name: 'Dan', age: 50, job: 'developer' };
+console.log('person =', person);
+
+const personClone = { ...person, location: 'Bistrita' };
+console.log('personClone =', personClone);
